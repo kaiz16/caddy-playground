@@ -1,0 +1,13 @@
+:3000 {
+	handle_path /* {
+		file_server
+	}
+
+	handle_path /blogs* {
+		reverse_proxy :5000
+	}
+
+	handle /404 {
+		respond "Not found" 404
+	}
+}
